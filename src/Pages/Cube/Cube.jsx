@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { MakeMove } from './move.js';
+import { BestNextMove } from '../AI_Model/gemini.js';
 
 function Cube() {
     const Red = [['R', 'R', 'R'], ['R', 'R', 'R'], ['R', 'R', 'R']];
@@ -19,6 +20,7 @@ function Cube() {
     const handleMove = (move) => {
         setCube(MakeMove(cube, move));
     }
+    
 
     // Fixed function - corrected variable assignments and movement directions
     const handleMovement = (move) => {
@@ -43,6 +45,14 @@ function Cube() {
     const toggleExpand = () => {
         setExpanded(!expanded);
     }
+    const handleClick = async() => {
+      for(let i = 0; i < 10; i++){
+        const move = await BestNextMove(cube);
+        const formattedmove = move?.split(":")[1].trim();
+        console.log(formattedmove);
+        setCube(MakeMove(cube, formattedmove));
+      }
+  }
 
     const colorMap = {
         'R': '#e53935',
@@ -69,7 +79,7 @@ function Cube() {
                 <h1 className='text-5xl text-neutral-600 font-bold'>Rubik's Cube</h1>
                 <button 
                     className='mb-2 bg-purple-600 rounded text-white px-3 py-1 cursor-pointer'
-                    onClick={toggleExpand}
+                    onClick={handleClick}
                 >
                     {expanded ? 'Collapse Cube' : 'Expand Cube'}
                 </button>
