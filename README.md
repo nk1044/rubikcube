@@ -1,8 +1,13 @@
-# React + Vite
+# Rubik's Cube Solver
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Rubik's Cube](https://github.com/user-attachments/assets/8316bccb-3646-4ef0-9251-8faecddc90eb)
 
-Currently, two official plugins are available:
+## About
+This website provides a visual representation of a Rubik's Cube and solves it using AI and advanced algorithms. Whether you're a beginner or an expert, our solver helps you find the optimal solution step by step.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- **Interactive 3D Rubik's Cube**: Rotate and manipulate the cube directly in your browser.
+- **AI-Powered Solver**:
+- **Algorithm-Based Solver**:
+- **Step-by-Step Guide**: Displays the sequence of moves needed to solve the cube.
+- **User-Friendly Interface**: Clean and intuitive design for easy use.
